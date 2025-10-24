@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Captcha Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main class="card" role="main">
+        <h1>Captcha Generator</h1>
+        <div class="row">
+            <section class="left">
+                <div class="canvas-wrap">
+                    <canvas id="captchaCanvas" width="520" height="120"></canvas>
+                </div>
+
+                <div class="controls">
+                    <button id="refreshBtn" class="btn">🔄 Refresh</button>
+                    <button id="audioBtn" class="btn">🔊 Audio</button>
+                    <div style="flex:1"></div>
+                    <label class="muted">Length
+                        <select id="lengthSelect">
+                            <option value="4">4</option>
+                            <option value="5" selected>5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="input-area">
+                    <label for="inputCaptcha">Enter the code shown</label>
+                    <input id="inputCaptcha" type="text" autocomplete="off" />
+
+                    <div class="btn-group">
+                        <button id="verifyBtn" class="btn btn-primary">Verify</button>
+                        <button id="clearBtn" class="btn btn-ghost">Clear</button>
+                    </div>
+
+                    <div id="status" class="status"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
