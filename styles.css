@@ -6,7 +6,7 @@
   --success: #22c55e;
   --danger: #ef4444;
 
-  --radius: 0.75rem;
+  --radius: 0.6rem;
 }
 
 * {
@@ -20,133 +20,141 @@ body {
   background: linear-gradient(180deg, var(--bg), #061223);
   color: #e6eef8;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 2.5rem;
+  padding: 2rem 1rem;
 }
 
 .card {
   width: 100%;
-  max-width: 54rem;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 1.1rem;
-  padding: 2.5rem;
-  box-shadow: 0 0.6rem 2.5rem rgba(2, 6, 23, 0.6);
+  max-width: 52rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(0.7rem);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .row {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .left {
   flex: 1 1 26rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.4rem;
 }
 
 .right {
-  width: 22rem;
+  flex: 1 1 16rem;
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1.2rem;
 }
 
 .canvas-wrap {
   background: #081526;
-  padding: 1.6rem;
-  border-radius: 0.9rem;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 canvas {
   width: 100%;
-  height: 5.6rem;
+  height: 5rem;
   border-radius: 0.5rem;
-}
-
-.controls {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-button,
-.btn {
-  background: transparent;
-  border: 0.1rem solid rgba(255, 255, 255, 0.08);
-  margin: 0.4rem 0.2rem;
-  padding: 0.75rem 1.1rem;
-  border-radius: var(--radius);
-  color: inherit;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.25s ease;
-}
-
-.btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.btn-primary {
-  background: var(--accent);
-  color: #04263a;
-  border: none;
-}
-
-.btn-primary.btn:hover {
-  background: #8cbefa;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 1rem 1.2rem;
-  border-radius: var(--radius);
-  border: 0.1rem solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.07);
-  color: inherit;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s;
-}
-
-input[type="text"]:focus {
-  border-color: var(--accent);
-  background: rgba(96, 165, 250, 0.1);
-  outline: none;
-  box-shadow: 0 0 0.6rem rgba(96, 165, 250, 0.5);
 }
 
 .input-area {
   display: flex;
   flex-direction: column;
-  gap: 1.3rem;
+  gap: 1rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  border: 0.1rem solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.09);
+  color: inherit;
+  font-size: 0.95rem;
+  transition: border 0.25s ease, box-shadow 0.25s ease, background 0.25s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent);
+  background: rgba(96, 165, 250, 0.16);
+  outline: none;
+  box-shadow: 0 0 0.4rem rgba(96, 165, 250, 0.4);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+}
+
+button,
+.btn {
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #031e35;
+}
+
+.btn-primary:hover {
+  background: #8fc2ff;
+}
+
+.btn {
+  margin: 0.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .status {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-top: 0.4rem;
 }
 
 .status.ok {
   color: var(--success);
 }
-
 .status.err {
   color: var(--danger);
 }
 
 @media (max-width: 48rem) {
-  .right {
-    width: 100%;
-  }
-
   .card {
-    padding: 2rem;
+    padding: 1.6rem;
+    gap: 1.6rem;
   }
 
   body {
-    padding: 1.6rem;
+    padding: 1.4rem 0.8rem;
   }
 }
